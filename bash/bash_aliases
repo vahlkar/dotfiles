@@ -1,0 +1,26 @@
+# Additional aliases
+
+# Local
+alias proc='ps -ef | grep -v grep | grep'
+alias i3lock='i3lock --color=000000'
+
+# bépo
+alias azer='setxkbmap fr bepo'
+alias bépo='setxkbmap fr'
+
+# ls aliases
+alias ll='ls -lh'
+alias la='ls -A'
+alias l='ls -CF'
+
+# N7 Aliases
+N7MACHINE=pikachu
+N7REMOTE=$HOME/.n7home/
+# /!\ Attention /!\ : si le premier argument de rsync est le chemin d'un repertoire,
+# il faut ajouter le / a la fin du chemin,
+# sinon cela cree un sous dossier dans la destination, au lieu de synchroniser les dossiers.
+N7LOCAL=$HOME/Documents/Ecole/ENSEEIHT/N7CRI/
+alias n7vpn="sudo openvpn $HOME/.N7.ovpn"
+alias n7ssh="ssh -X vlaniel@$N7MACHINE.enseeiht.fr"
+alias n7mount="sshfs vlaniel@$N7MACHINE.enseeiht.fr:/home/vlaniel/Documents $N7REMOTE"
+alias n7dismount="fusermount -u $N7REMOTE"

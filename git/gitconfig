@@ -1,0 +1,7 @@
+[user]
+	name = Volodia Laniel
+	email = laniel.volodia@gmail.com
+[color]
+	ui = true
+[push]
+	default = simple

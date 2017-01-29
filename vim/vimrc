@@ -1,0 +1,146 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+"------------------------------ Plugins -------------------------------
+
+" Barre d'information en bas de vim.
+Plugin 'bling/vim-airline'
+" Complétion divers langages dont C/C++.
+Plugin 'Valloric/YouCompleteMe'
+" Syntaxe egg.
+Plugin 'arthaud/egg'
+" Suppression des espaces en fin de ligne.
+Plugin 'ntpeters/vim-better-whitespace'
+" Commente les lignes avec gcc et (dep) gc.
+Plugin 'tpope/vim-commentary'
+" Ferme automatiquement les blocs.
+Plugin 'tpope/vim-endwise'
+" Markdown (les deux suivants)
+Plugin 'godlygeek/tabular'
+" Plugin 'plasticboy/vim-markdown'
+
+Plugin 'scrooloose/syntastic'
+Plugin 'Yggdroot/indentline'
+Plugin 'javacomplete'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mklabs/vim-cowsay'
+
+"---------------------------- Fin Plugins -----------------------------
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+"Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"----------------------------------------------------------------------
+"------------------------ Configuration vimrc--------------------------
+"----------------------------------------------------------------------
+
+syntax on
+
+"set writebackup nobackup updatetime=1000 updatecount=50
+set noignorecase
+set autoindent
+set shiftwidth=4 shiftround
+set tabstop=4
+set expandtab
+set showmode showcmd
+set ruler
+set report=0
+set undolevels=1000
+set backspace=indent,eol,start
+set sidescroll=1
+set wildchar=<Tab>
+set joinspaces
+set whichwrap=b,s,h,l,<,>,~,[,]
+
+set errorformat=%f:%l:\ %m
+
+" si on positionne textwidth à 0 il n' y a pas de retour à la ligne inséré
+" automatiquement !
+set textwidth=0
+
+set comments=nsr:(*,nmb:**,nel:*),nb:#,n:%,:XCOMM,n:>,nfb:-,nbf:+,nbf:?,nbf:.,nbf:==>,nbf:=>,nbf:->,nbf:-->,n:--,nfb:o,nfb:[1-9][0-9.-)]*
+set formatoptions=tclq
+
+let g:ada_standard_types=1  " Colorie les types Ada.
+"let g:ada_line_errors=1  " Affiche les lignes trop longues
+
+set nu
+set ai
+set gdefault
+
+" Pour eviter les sauts de ligne intempestifs en Caml
+autocmd BufReadPost *.ml set textwidth=0
+
+" Pour que la recherche soit sensible a la case dans les fichiers ADA
+"autocmd BufReadPost *.adb set noignorecase
+"autocmd BufReadPost *.ads set noignorecase
+
+" Pour airline
+set laststatus=2
+
+" Pour plus de couleurs !
+set t_Co=256
+
+" Pour adapter les couleurs à un fond noir.
+set background=dark
+
+" Pour activer la coloration syntaxique egg
+autocmd BufNewFile,BufRead *.egg set filetype=egg
+
+" Pour supprimer automatiquement les espaces en fin de ligne (voir doc pour
+" restreindre a certains types de fichiers).
+" :ToggleStripWhitespaceOnSave pour désactiver.
+autocmd BufWritePre * StripWhitespace
+
+" Pour replier automatiquement les blocs marqués triple {}
+set foldmethod=marker
+
+" Correction orthographique.
+set nospell
+" set spelllang=en_gb
+set spelllang=fr
+
+set conceallevel=0
+
+" Afficher tous les caractères (markdown).
+let g:vim_markdown_conceal = 0
+let g:tex_conceal = ""
+let g:vim_markdown_folding_disabled = 1
