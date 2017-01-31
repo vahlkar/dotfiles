@@ -151,7 +151,7 @@ bar {
 }
 
 # Configuration utilisateur
-bindsym $mod+Escape exec i3lock -fi ~/.config/i3/lock.png
+bindsym $mod+Escape exec i3lock -c 000000 -fi ~/.wallpaper-lock
 bindsym $mod+Shift+Escape exit
 
 bindsym Control+Mod1+Delete exec "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot the computer?' -b 'Yes, reboot' 'reboot'"
