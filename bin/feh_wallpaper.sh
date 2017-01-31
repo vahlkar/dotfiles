@@ -1,2 +1,2 @@
 #!/bin/bash
-feh  --bg-fill '~/.wallpaper'
+feh  --bg-fill "$HOME/.wallpaper"
