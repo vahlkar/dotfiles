@@ -26,3 +26,4 @@
     ~/.config/i3status: i3status
     ~/.config/terminator: terminator
     ~/.config/dhcpd: dhcpd
+    ~/.config/mpd/mpd.conf: mpd/mpd.conf

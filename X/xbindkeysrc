@@ -65,6 +65,22 @@
 #"rxvt"
 #  Control + b:2 + Release
 
+# Previous
+"/usr/bin/mpc prev"
+   XF86AudioPrev
+
+# Play / Pause
+"/usr/bin/mpc toggle"
+   XF86AudioPlay
+
+# Stop
+"/usr/bin/mpc stop"
+   XF86AudioStop
+
+# Next
+"/usr/bin/mpc next"
+   XF86AudioNext
+
 # Increase volume
 # "/usr/bin/pactl set-sink-volume 1 +5%"
 "/usr/bin/ponymix --max-volume 150 increase 5"
