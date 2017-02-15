@@ -11,12 +11,9 @@ general {
         interval = 5
 }
 
-#order += "ipv6"
 order += "disk /"
-order += "disk /home/"
-order += "disk /data/"
-#order += "run_watch DHCP"
-#order += "run_watch VPN"
+order += "disk /home"
+order += "disk /data"
 order += "wireless wlo1"
 order += "ethernet enp3s0"
 order += "ethernet tun0"
@@ -49,7 +46,7 @@ volume master {
 }
 
 battery 0 {
-	format = "%status %percentage %remaining %emptytime"
+	format = "%status %percentage"
 	format_down = "No battery"
 	status_chr = "~ CHR"
 	status_bat = "- BAT"
@@ -57,14 +54,6 @@ battery 0 {
 	path = "/sys/class/power_supply/BAT%d/uevent"
 	low_threshold = 10
 }
-
-#run_watch DHCP {
-#        pidfile = "/var/run/dhclient*.pid"
-#}
-
-#run_watch VPN {
-#        pidfile = "/var/run/vpnc/pid"
-#}
 
 tztime local {
         format = "%Y-%m-%d %H:%M:%S"
@@ -78,10 +67,10 @@ disk "/" {
         format = "/ %avail"
 }
 
-disk "/home/" {
+disk "/home" {
         format = "SSD /home/ %avail"
 }
 
-disk "/data/" {
+disk "/data" {
         format = "HDD /data/ %avail"
 }
