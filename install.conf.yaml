@@ -15,6 +15,10 @@
     ~/.gnupg/gpg.conf: gnupg/gpg.conf
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
     ~/.gnupg/dirmngr.conf: gnupg/dirmngr.conf
+    ~/.gnupg-alt-keyring/gpg.conf: gnupg/gpg.conf
+    ~/.gnupg-alt-keyring/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.gnupg-alt-keyring/dirmngr.conf: gnupg/dirmngr.conf
+    ~/.config/yaourt/yaourtrc: yaourt/yaourtrc
     ~/.gitconfig: git/gitconfig
     ~/.vimrc: vim/vimrc
     ~/.profile: X/profile
