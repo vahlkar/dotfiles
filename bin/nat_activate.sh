@@ -1,6 +1,6 @@
 #!/bin/bash
-IF_ETH=enp1s0
-IF_WLAN=wlp2s0
+IF_ETH=enp3s0
+IF_WLAN=wlo1
 IF_VPN=tun0
 
 SUBNET="10.0.0.0/24"

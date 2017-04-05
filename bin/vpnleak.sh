@@ -1,5 +1,5 @@
 #!/bin/bash
-IF_OUT=wlp2s0
+IF_OUT=wlo1
 VPN=147.127.192.10
 IPLOCAL="$(ip a | grep -v inet6 | grep inet | grep "$IF_OUT" | awk '{ print $2 }')"
 

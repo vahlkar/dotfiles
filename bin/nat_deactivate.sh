@@ -1,5 +1,5 @@
 #!/bin/bash
-IF_ETH=enp1s0
+IF_ETH=enp3s0
 
 uid=$(id -u)
 if [ "$uid" -ne 0 ]; then
