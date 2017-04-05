@@ -12,7 +12,6 @@
 [profiles]
   [[default]]
     background_darkness = 0.7
-    background_image = None
     background_type = transparent
     cursor_color = "#aaaaaa"
     font = Monospace 11
