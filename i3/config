@@ -157,7 +157,7 @@ bindsym $mod+Shift+Escape exit
 bindsym Control+Mod1+Delete exec "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot the computer?' -b 'Yes, reboot' 'reboot'"
 bindsym $mod+a [urgent=latest] focus
 
-bindsym $mod+F1 exec firefox
+bindsym $mod+F1 exec chromium
 bindsym $mod+F2 exec thunar
 bindsym $mod+F3 exec thunderbird
 bindsym $mod+F4 exec keepassx2
@@ -171,7 +171,7 @@ bindsym $mod+XF86Mail exec thunderbird
 bindsym Shift+XF86Mail exec pidgin
 bindsym Control+XF86Mail exec discord-canary
 bindsym $mod+XF86MyComputer exec thunar
-bindsym $mod+XF86HomePage exec firefox
+bindsym $mod+XF86HomePage exec chromium
 bindsym Shift+XF86HomePage exec tor-browser-en
 bindsym Control+XF86HomePage exec google-chrome-stable
 bindsym $mod+XF86Calculator exec gnome-calculator
