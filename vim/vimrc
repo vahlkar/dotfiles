@@ -8,31 +8,37 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'              " Manage plugins
 
 "------------------------------ Plugins -------------------------------
 
-" Barre d'information en bas de vim.
-Plugin 'bling/vim-airline'
-" Complétion divers langages dont C/C++.
-Plugin 'Valloric/YouCompleteMe'
-" Syntaxe egg.
-Plugin 'arthaud/egg'
-" Suppression des espaces en fin de ligne.
-Plugin 'ntpeters/vim-better-whitespace'
-" Commente les lignes avec gcc et (dep) gc.
-Plugin 'tpope/vim-commentary'
-" Ferme automatiquement les blocs.
-Plugin 'tpope/vim-endwise'
-" Markdown (les deux suivants)
-Plugin 'godlygeek/tabular'
-" Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-sensible'             " Add multiple features
+" Plugin 'danro/rename.vim'               " Enable file renaming
 
-Plugin 'scrooloose/syntastic'
-Plugin 'Yggdroot/indentline'
-Plugin 'javacomplete'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'mklabs/vim-cowsay'
+Plugin 'SirVer/ultisnips'               " Use snippets
+Plugin 'scrooloose/syntastic'           " Compile and print errors on :w
+Plugin 'Valloric/YouCompleteMe'         " Complete C/C++
+Plugin 'javacomplete'                   " Complete Java
+Plugin 'tell-k/vim-autopep8'            " Clean python
+Plugin 'tpope/vim-commentary'           " Auto (de)comment
+Plugin 'tpope/vim-endwise'              " Auto end
+Plugin 'matze/vim-move'                 " Move blocs through code and indentation
+
+Plugin 'bling/vim-airline'              " Explicit status bar
+Plugin 'airblade/vim-gitgutter'         " Print git diff into vim
+Plugin 'Yggdroot/indentLine'            " Explicit indentation
+Plugin 'ntpeters/vim-better-whitespace' " Spot and remove bad whitespaces
+Plugin 'google/vim-searchindex'         " Print number of results in a search
+
+" Coloration
+Plugin 'ekalinin/Dockerfile.vim'        " Dockerfile
+" Plugin 'rust-lang/rust.vim'             " Rust
+Plugin 'vim-scripts/django.vim'         " Django
+" Plugin 'arthaud/egg'                    " Egg
+Plugin 'godlygeek/tabular'              " Markdown
+" Plugin 'plasticboy/vim-markdown'        " Markdown
+
+" Plugin 'mklabs/vim-cowsay'              " Cowsay...
 
 "---------------------------- Fin Plugins -----------------------------
 
@@ -121,6 +127,10 @@ set t_Co=256
 
 " Pour adapter les couleurs à un fond noir.
 set background=dark
+
+" 80th column rule
+set colorcolumn=81,91,101
+hi ColorColumn ctermbg=235
 
 " Pour activer la coloration syntaxique egg
 autocmd BufNewFile,BufRead *.egg set filetype=egg
