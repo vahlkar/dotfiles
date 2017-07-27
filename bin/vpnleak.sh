@@ -1,7 +1,32 @@
 #!/bin/bash
-IF_OUT=wlo1
-VPN=147.127.192.10
-IPLOCAL="$(ip a | grep -v inet6 | grep inet | grep "$IF_OUT" | awk '{ print $2 }')"
+
+### Default route interface detection
+HOST_IF=$(ip route | grep default | awk '{print $5}')
+if [ -z "$HOST_IF" ]; then
+    echo "Host default interface not detected!" >&2
+    exit 1
+fi
+echo "Host default interface on $HOST_IF"
+
+IPLOCAL="$(ip a | grep -v inet6 | grep inet | grep "$HOST_IF" | awk '{ print $2 }')"
+if [ -z "$IPLOCAL" ]; then
+    echo "Local ip address not detected!" >&2
+    exit 1
+fi
+echo "Host local ip address: $IPLOCAL"
+
+VPN="$(ip r | grep "$HOST_IF" | grep via | grep -v default | awk '{ print $1 }')"
+if [ -z "$VPN" ]; then
+    echo "VPN ip address not detected!" >&2
+    exit 1
+fi
+echo "VPN ip address: $VPN"
+
+### Root check
+if [ "$EUID" -ne 0 ]; then
+    echo "This script requires root."
+    exit
+fi
 
 # Allow established output traffic.
 iptables -A OUTPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
