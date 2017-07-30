@@ -33,7 +33,7 @@ do
     cat "$mirrorlist_orig" | tail -n "+$l_start" | head -n "$l_num" | sed -e 's/^#Server/Server/' >> "$mirrorlist_tmp"
 done
 
-read -p "Would you like to add the inpt repository before ranking? [y/n]" ans
+read -p "Would you like to add the inpt repository before ranking? [Y/n]" ans
 if [ -z "$ans" ] || [ "$ans" == "y" ] || [ "$ans" == "Y" ]; then
     echo "Add: $inpt"
     echo "$inpt" >> "$mirrorlist_tmp"
@@ -48,7 +48,7 @@ echo "$ranked" | head -1 >> "$mirrorlist_tmp"
 echo "$ranked" | tail -10 >> "$mirrorlist_tmp"
 tail -11 "$mirrorlist_tmp"
 
-read -p "Would you like to save the modifications to ${mirrorlist}? [y/n]" ans
+read -p "Would you like to save the modifications to ${mirrorlist}? [Y/n]" ans
 if [ -z "$ans" ] || [ "$ans" == "y" ] || [ "$ans" == "Y" ]; then
     # Backup current mirrorlist.
     echo "Backup $mirrorlist to $mirrorlist_old"
@@ -61,7 +61,7 @@ else
 fi
 
 if [ -e "$mirrorlist_new" ]; then
-    read -p "Would you like to move $mirrorlist_new to ${mirrorlist_backup}? [y/n]" ans
+    read -p "Would you like to move $mirrorlist_new to ${mirrorlist_backup}? [Y/n]" ans
     if [ -z "$ans" ] || [ "$ans" == "y" ] || [ "$ans" == "Y" ]; then
         echo "Move $mirrorlist_new to $mirrorlist_backup"
         sudo mv "$mirrorlist_new" "$mirrorlist_backup"
