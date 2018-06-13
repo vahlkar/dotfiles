@@ -31,8 +31,12 @@ fi
 # Allow established output traffic.
 iptables -A OUTPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 # Allow output DNS requests.
-iptables -A OUTPUT -m conntrack --ctstate NEW -p udp -m udp --dport 53 -s "$IPLOCAL" -j ACCEPT
+# iptables -A OUTPUT -m conntrack --ctstate NEW -p udp -m udp --dport 53 -s "$IPLOCAL" -j ACCEPT
+# Allow traffic toward the internal network.
+# iptables -A OUTPUT -m conntrack --ctstate NEW -s "$IPLOCAL" -d "$IPLOCAL" -j ACCEPT
 # Allow traffic toward the VPN server.
 iptables -A OUTPUT -m conntrack --ctstate NEW -s "$IPLOCAL" -d "$VPN" -j ACCEPT
 # Deny everything else.
 iptables -A OUTPUT -m conntrack --ctstate NEW -s "$IPLOCAL" -j DROP
+# Set DNS
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
