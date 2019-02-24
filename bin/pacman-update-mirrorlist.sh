@@ -1,6 +1,6 @@
 #!/bin/bash
 
-inpt='Server = http://depots.inpt.fr/archlinux/$repo/os/$arch'
+# inpt='Server = http://depots.inpt.fr/archlinux/$repo/os/$arch'
 
 PACMAN_D=/etc/pacman.d
 mirrorlist="$PACMAN_D/mirrorlist"
@@ -33,13 +33,13 @@ do
     cat "$mirrorlist_orig" | tail -n "+$l_start" | head -n "$l_num" | sed -e 's/^#Server/Server/' >> "$mirrorlist_tmp"
 done
 
-read -p "Would you like to add the inpt repository before ranking? [Y/n]" ans
-if [ -z "$ans" ] || [ "$ans" == "y" ] || [ "$ans" == "Y" ]; then
-    echo "Add: $inpt"
-    echo "$inpt" >> "$mirrorlist_tmp"
-else
-    echo "OK won't do."
-fi
+# read -p "Would you like to add the inpt repository before ranking? [Y/n]" ans
+# if [ -z "$ans" ] || [ "$ans" == "y" ] || [ "$ans" == "Y" ]; then
+#     echo "Add: $inpt"
+#     echo "$inpt" >> "$mirrorlist_tmp"
+# else
+#     echo "OK won't do."
+# fi
 
 echo "Ranking mirrors..."
 ranked="$(rankmirrors -n 10 $mirrorlist_tmp)"
