@@ -15,9 +15,9 @@ Plugin 'VundleVim/Vundle.vim'              " Manage plugins
 Plugin 'tpope/vim-sensible'             " Add multiple features
 " Plugin 'danro/rename.vim'               " Enable file renaming
 
-Plugin 'SirVer/ultisnips'               " Use snippets
+" Plugin 'SirVer/ultisnips'               " Use snippets
 Plugin 'scrooloose/syntastic'           " Compile and print errors on :w
-Plugin 'Valloric/YouCompleteMe'         " Complete C/C++
+" Plugin 'Valloric/YouCompleteMe'         " Complete C/C++
 Plugin 'javacomplete'                   " Complete Java
 Plugin 'tell-k/vim-autopep8'            " Clean python
 Plugin 'tpope/vim-commentary'           " Auto (de)comment
@@ -33,9 +33,9 @@ Plugin 'google/vim-searchindex'         " Print number of results in a search
 " Coloration
 Plugin 'ekalinin/Dockerfile.vim'        " Dockerfile
 " Plugin 'rust-lang/rust.vim'             " Rust
-Plugin 'vim-scripts/django.vim'         " Django
+" Plugin 'vim-scripts/django.vim'         " Django
 " Plugin 'arthaud/egg'                    " Egg
-Plugin 'godlygeek/tabular'              " Markdown
+" Plugin 'godlygeek/tabular'              " Markdown
 " Plugin 'plasticboy/vim-markdown'        " Markdown
 
 " Plugin 'mklabs/vim-cowsay'              " Cowsay...
