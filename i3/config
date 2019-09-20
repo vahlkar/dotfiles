@@ -161,10 +161,7 @@ bindsym $mod+F1 exec chromium
 bindsym $mod+F2 exec thunar
 bindsym $mod+F3 exec thunderbird
 bindsym $mod+F4 exec keepassx2
-bindsym $mod+F5 exec FreeFileSync
 bindsym $mod+F8 exec pavucontrol
-bindsym $mod+F9 exec texmaker
-bindsym $mod+F10 exec gnome-calculator
 
 # Redundant shortcuts
 bindsym $mod+XF86Mail exec thunderbird
@@ -178,7 +175,8 @@ bindsym $mod+XF86Calculator exec gnome-calculator
 bindsym Shift+XF86Calculator exec ~/bin/touchpad_toggle.sh
 
 # Screenshot
-bindsym Print exec xfce4-screenshooter
+# bindsym Print exec xfce4-screenshooter
+bindsym Print exec flameshot gui -p ~/Images/screenshots
 
 # Ecran externe
 workspace 1 output LVDS1
