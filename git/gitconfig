@@ -5,3 +5,10 @@
 	ui = true
 [push]
 	default = simple
+[alias]
+	co = checkout
+	ci = commit
+	br = branch
+	st = status
+	a = add
+	lg = log --oneline
