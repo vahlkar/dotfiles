@@ -15,18 +15,12 @@
     ~/.gnupg/gpg.conf: gnupg/gpg.conf
     ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
     ~/.gnupg/dirmngr.conf: gnupg/dirmngr.conf
-    ~/.gnupg-alt-keyring/gpg.conf: gnupg/gpg.conf
-    ~/.gnupg-alt-keyring/gpg-agent.conf: gnupg/gpg-agent.conf
-    ~/.gnupg-alt-keyring/dirmngr.conf: gnupg/dirmngr.conf
     ~/.gitconfig: git/gitconfig
     ~/.vimrc: vim/vimrc
     ~/.profile: X/profile
     ~/.xinitrc: X/xinitrc
     ~/.xprofile: X/xprofile
-    ~/.Xmodmap: X/Xmodmap
-    ~/.xbindkeysrc: X/xbindkeysrc
     ~/.config/i3: i3
     ~/.config/i3status: i3status
     ~/.config/terminator: terminator
     ~/.config/dhcpd: dhcpd
-    ~/.config/mpd/mpd.conf: mpd/mpd.conf

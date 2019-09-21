@@ -12,7 +12,6 @@ general {
 }
 
 order += "disk /"
-order += "disk /data"
 order += "wireless wlo1"
 order += "ethernet enp3s0"
 order += "ethernet tun0"
@@ -63,9 +62,5 @@ load {
 }
 
 disk "/" {
-        format = "SSD / %avail"
-}
-
-disk "/data" {
-        format = "HDD /data/ %avail"
+        format = "/ %avail"
 }
