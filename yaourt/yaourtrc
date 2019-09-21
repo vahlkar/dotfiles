@@ -1,7 +1,0 @@
-#    yaourtrc  - Configuration for yaourt
-#
-#   See yaourtrc(5) for more information
-#
-#
-
-export GNUPGHOME="$HOME/.gnupg-alt-keyring"
