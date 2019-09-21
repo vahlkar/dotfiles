@@ -13,23 +13,17 @@ Plugin 'VundleVim/Vundle.vim'              " Manage plugins
 "------------------------------ Plugins -------------------------------
 
 Plugin 'tpope/vim-sensible'             " Add multiple features
-" Plugin 'danro/rename.vim'               " Enable file renaming
-
-" Plugin 'SirVer/ultisnips'               " Use snippets
 Plugin 'scrooloose/syntastic'           " Compile and print errors on :w
-" Plugin 'Valloric/YouCompleteMe'         " Complete C/C++
 Plugin 'javacomplete'                   " Complete Java
 Plugin 'tell-k/vim-autopep8'            " Clean python
 Plugin 'tpope/vim-commentary'           " Auto (de)comment
 Plugin 'tpope/vim-endwise'              " Auto end
 Plugin 'matze/vim-move'                 " Move blocs through code and indentation
-
 Plugin 'bling/vim-airline'              " Explicit status bar
 Plugin 'airblade/vim-gitgutter'         " Print git diff into vim
 Plugin 'Yggdroot/indentLine'            " Explicit indentation
 Plugin 'ntpeters/vim-better-whitespace' " Spot and remove bad whitespaces
 Plugin 'google/vim-searchindex'         " Print number of results in a search
-
 " Coloration
 Plugin 'ekalinin/Dockerfile.vim'        " Dockerfile
 " Plugin 'rust-lang/rust.vim'             " Rust
@@ -38,6 +32,9 @@ Plugin 'ekalinin/Dockerfile.vim'        " Dockerfile
 " Plugin 'godlygeek/tabular'              " Markdown
 " Plugin 'plasticboy/vim-markdown'        " Markdown
 
+" Plugin 'danro/rename.vim'               " Enable file renaming
+" Plugin 'SirVer/ultisnips'               " Use snippets
+" Plugin 'Valloric/YouCompleteMe'         " Complete C/C++
 " Plugin 'mklabs/vim-cowsay'              " Cowsay...
 
 "---------------------------- Fin Plugins -----------------------------
