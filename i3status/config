@@ -12,7 +12,6 @@ general {
 }
 
 order += "disk /"
-order += "disk /data"
 order += "wireless wlo1"
 order += "wireless wlp0s29u1u1u2"
 order += "ethernet enp3s0"
@@ -71,11 +70,7 @@ load {
 }
 
 disk "/" {
-        format = "SSD / %avail"
-}
-
-disk "/data" {
-        format = "HDD /data/ %avail"
+        format = "/ %avail"
 }
 
 cpu_temperature 0 {

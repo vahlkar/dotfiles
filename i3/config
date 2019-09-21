@@ -182,41 +182,10 @@ bindcode $mod+24 [urgent=latest] focus
 
 bindsym $mod+F1 exec chromium
 bindsym $mod+F2 exec thunar
-bindsym $mod+F3 exec thunderbird
-bindsym $mod+F4 exec keepassxc
-bindsym $mod+F8 exec pavucontrol
-
-# Redundant shortcuts
-bindsym $mod+XF86Mail exec thunderbird
-bindsym Shift+XF86Mail exec pidgin
-bindsym Control+XF86Mail exec discord-canary
-bindsym $mod+XF86MyComputer exec thunar
-bindsym $mod+XF86HomePage exec chromium
-bindsym Shift+XF86HomePage exec tor-browser-en
-bindsym Control+XF86HomePage exec google-chrome-stable
-bindsym $mod+XF86Calculator exec gnome-calculator
-bindsym Shift+XF86Calculator exec ~/bin/touchpad_toggle.sh
 
 # Screenshot
-# bindsym Print exec xfce4-screenshooter
-bindsym Print exec flameshot gui -p ~/Images/screenshots
-
-# Ecran externe
-workspace 1 output LVDS1
-workspace 8 output VGA1
-workspace 8 output HDMI-1-0
+bindsym Print exec xfce4-screenshooter
+# bindsym Print exec flameshot gui -p ~/Images/screenshots
 
 # Applications lancées au démarrage de i3
 #exec --no-startup-id [app]
-
-# Verrouillage de l'écran lors de la mise en veille / hibernation
-exec --no-startup-id ~/bin/xss-lock.sh
-
-# Raccourcis clavier touches spéciales
-exec --no-startup-id xbindkeys
-
-# Fond d'écran
-exec --no-startup-id feh --bg-fill ~/.wallpaper
-
-# AppArmor notify
-exec --no-startup-id aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
