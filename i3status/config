@@ -19,6 +19,7 @@ order += "ethernet tun0"
 order += "volume master"
 order += "battery 0"
 order += "load"
+order += "cpu_temperature 0"
 order += "tztime local"
 
 wireless wlo1 {
@@ -29,7 +30,8 @@ wireless wlo1 {
 ethernet enp3s0 {
         # if you use %speed, i3status requires root privileges
         format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+        # format_down = "E: down"
+        format_down = ""
 }
 
 ethernet tun0 {
@@ -68,4 +70,9 @@ disk "/" {
 
 disk "/data" {
         format = "HDD /data/ %avail"
+}
+
+cpu_temperature 0 {
+        format = "%degrees°C"
+        max_threshold = "85"
 }
