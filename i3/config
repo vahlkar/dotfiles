@@ -183,7 +183,7 @@ bindcode $mod+24 [urgent=latest] focus
 bindsym $mod+F1 exec chromium
 bindsym $mod+F2 exec thunar
 bindsym $mod+F3 exec thunderbird
-bindsym $mod+F4 exec keepassx2
+bindsym $mod+F4 exec keepassxc
 bindsym $mod+F8 exec pavucontrol
 
 # Redundant shortcuts
