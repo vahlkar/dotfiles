@@ -1,0 +1,1 @@
+KERNEL=="<IF-NAME>", ATTR{address}=="<MAC-ADDR>", RUN+="/opt/udev-usb-wifi.sh %k"

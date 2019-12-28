@@ -1,0 +1,2 @@
+#!/bin/sh
+ExecDownPre="systemctl start netctl-auto@wlo1.service"
