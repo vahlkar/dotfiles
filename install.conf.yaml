@@ -24,3 +24,4 @@
     ~/.config/i3status: i3status
     ~/.config/terminator: terminator
     ~/.config/dhcpd: dhcpd
+    ~/.tmux.conf: tmux/tmux.conf
