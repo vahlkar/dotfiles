@@ -218,3 +218,5 @@ exec --no-startup-id xbindkeys
 # Fond d'écran
 exec --no-startup-id feh --bg-fill ~/.wallpaper
 
+# AppArmor notify
+exec --no-startup-id aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
