@@ -38,5 +38,7 @@ iptables -A OUTPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 iptables -A OUTPUT -m conntrack --ctstate NEW -s "$IPLOCAL" -d "$VPN" -j ACCEPT
 # Deny everything else.
 iptables -A OUTPUT -m conntrack --ctstate NEW -s "$IPLOCAL" -j DROP
-# Set DNS
-echo "nameserver 8.8.8.8" > /etc/resolv.conf
+# Set DNS (disabled, use dnsmasq instead)
+# Google DNS
+# echo "nameserver 8.8.8.8" > /etc/resolv.conf
+# echo "nameserver 8.8.4.4" >> /etc/resolv.conf
