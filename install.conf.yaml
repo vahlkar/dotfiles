@@ -29,3 +29,4 @@
     ~/.config/terminator: terminator
     ~/.config/dhcpd: dhcpd
     ~/.config/mpd/mpd.conf: mpd/mpd.conf
+    ~/.config/picom/picom.conf: X/picom.conf
