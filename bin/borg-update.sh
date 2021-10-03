@@ -14,11 +14,10 @@ echo "## $(date "+%F %H:%M:%S"): Backup" | tee -a "$LOG_FILE"
 borg create -v --stats --progress -C lz4 \
     "$REPOSITORY::{hostname}-{now:%Y-%m-%dT%H:%M:%S}" \
     "$HOME" \
-    "$DATA" \
-    --exclude "$DATA/.cache" \
-    --exclude "$DATA/.local" \
-    --exclude "$DATA/.PlayOnLinux" \
-    --exclude "$DATA/tmp" \
+    --exclude "$HOME/.cache" \
+    --exclude "$HOME/.local" \
+    --exclude "$HOME/.PlayOnLinux" \
+    --exclude "$HOME/tmp" \
     --exclude "$HOME/Dropbox" \
     --exclude '*.swp' 2>&1 | tee -a "$LOG_FILE"
 

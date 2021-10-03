@@ -12,38 +12,40 @@ general {
 }
 
 order += "disk /"
-order += "disk /data"
-order += "wireless wlo1"
-order += "wireless wlp0s29u1u1u2"
-order += "ethernet enp3s0"
+order += "wireless wlp114s0"
+order += "wireless net0"
+order += "ethernet net1"
 order += "ethernet tun0"
+order += "ethernet wg0"
 order += "volume master"
 order += "battery 0"
 order += "load"
 order += "cpu_temperature 0"
 order += "tztime local"
 
-wireless wlo1 {
+wireless wlp114s0 {
         format_up = "W: (%quality at %essid) %ip"
         format_down = "W: down"
 }
 
-wireless wlp0s29u1u1u2 {
+wireless net0 {
         format_up = "W: (%quality at %essid) %ip"
         format_down = ""
 }
 
-ethernet enp3s0 {
-        # if you use %speed, i3status requires root privileges
-        format_up = "E: %ip (%speed)"
-        # format_down = "E: down"
+ethernet net1 {
+        format_up = "E: %ip"
         format_down = ""
 }
 
 ethernet tun0 {
-        # if you use %speed, i3status requires root privileges
-        format_up = "VPN: %ip (%speed)"
-        format_down = "VPN: down"
+        format_up = "VPN: %ip"
+        format_down = ""
+}
+
+ethernet wg0 {
+        format_up = "WG: %ip"
+        format_down = ""
 }
 
 volume master {
@@ -53,11 +55,11 @@ volume master {
 }
 
 battery 0 {
-	format = "%status %percentage"
-	format_down = "No battery"
-	status_chr = "~ CHR"
-	status_bat = "- BAT"
-	status_full = "+ FULL"
+	format = " %status %percentage"
+	format_down = " No battery"
+	status_chr = "~CHR"
+	status_bat = "-BAT"
+	status_full = "+FULL"
 	path = "/sys/class/power_supply/BAT%d/uevent"
 	low_threshold = 10
 }
@@ -71,11 +73,7 @@ load {
 }
 
 disk "/" {
-        format = "SSD / %avail"
-}
-
-disk "/data" {
-        format = "HDD /data/ %avail"
+        format = "/ %avail"
 }
 
 cpu_temperature 0 {

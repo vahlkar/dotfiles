@@ -14,4 +14,4 @@ xset -b
 xset s off -dpms
 
 # Custom keyboard settings
-xmodmap ~/.Xmodmap
+#xmodmap ~/.Xmodmap

@@ -23,7 +23,6 @@
     ~/.profile: X/profile
     ~/.xinitrc: X/xinitrc
     ~/.xprofile: X/xprofile
-    ~/.Xmodmap: X/Xmodmap
     ~/.xbindkeysrc: X/xbindkeysrc
     ~/.config/i3: i3
     ~/.config/i3status: i3status

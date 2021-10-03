@@ -104,16 +104,16 @@
    XF86MonBrightnessDown
 
 # Hibernate with SleepButton
-"/usr/bin/systemctl hibernate"
-   XF86Sleep
+# "/usr/bin/systemctl hibernate"
+#    XF86Sleep
 
 # Suspend
 "/usr/bin/systemctl suspend"
-   Shift + Pause
+   Shift + F12
 
 # Suspend
-"/usr/bin/systemctl hybrid-sleep"
-   Control + Pause
+# "/usr/bin/systemctl hybrid-sleep"
+#    Control + Pause
 
 ##################################
 # End of xbindkeys configuration #

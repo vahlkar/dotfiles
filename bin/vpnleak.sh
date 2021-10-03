@@ -42,3 +42,6 @@ iptables -A OUTPUT -m conntrack --ctstate NEW -s "$IPLOCAL" -j DROP
 # Google DNS
 # echo "nameserver 8.8.8.8" > /etc/resolv.conf
 # echo "nameserver 8.8.4.4" >> /etc/resolv.conf
+# Quad9 DNS
+# echo "nameserver 9.9.9.9" > /etc/resolv.conf
+# echo "nameserver 149.112.112.112" >> /etc/resolv.conf
