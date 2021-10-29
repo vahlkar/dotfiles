@@ -6,3 +6,4 @@ setenv VPN $HOME/work/tools/nordvpn/ovpn_udp
 set PATH $PATH "$HOME/.gem/ruby/2.7.0/bin"
 setenv GEM_HOME "$HOME/.gems"
 set PATH $PATH "$GEM_HOME/bin"
+set PATH $PATH "$HOME/Android/Sdk/emulator"
