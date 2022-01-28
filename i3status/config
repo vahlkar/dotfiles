@@ -17,6 +17,7 @@ order += "wireless net0"
 order += "ethernet net1"
 order += "ethernet tun0"
 order += "ethernet wg0"
+order += "ethernet nordlynx"
 order += "volume master"
 order += "battery 0"
 order += "load"
@@ -45,6 +46,11 @@ ethernet tun0 {
 
 ethernet wg0 {
         format_up = "WG: %ip"
+        format_down = ""
+}
+
+ethernet nordlynx {
+        format_up = "VPN: %ip"
         format_down = ""
 }
 
