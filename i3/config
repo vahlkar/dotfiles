@@ -224,3 +224,6 @@ exec --no-startup-id aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
 
 # Picom - Composite manager
 exec --no-startup-id picom &
+
+# unclutter to hide iddle cursor
+exec --no-startup-id unclutter --fork
