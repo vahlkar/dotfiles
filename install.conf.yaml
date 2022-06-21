@@ -24,4 +24,5 @@
     ~/.config/i3status: i3status
     ~/.config/terminator: terminator
     ~/.config/dhcpd: dhcpd
+    ~/.vim/bundle/Vundle.vim: Vundle.vim
     ~/.tmux.conf: tmux/tmux.conf
