@@ -30,3 +30,4 @@
     ~/.config/dhcpd: dhcpd
     ~/.config/mpd/mpd.conf: mpd/mpd.conf
     ~/.config/picom/picom.conf: X/picom.conf
+    ~/.vim/bundle/Vundle.vim: Vundle.vim
