@@ -1,4 +1,5 @@
 [global_config]
+  inactive_color_offset = 0.806949806949807
 [keybindings]
 [profiles]
   [[default]]
