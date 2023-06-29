@@ -200,7 +200,7 @@ bindsym Shift+XF86Calculator exec ~/bin/touchpad_toggle.sh
 
 # Screenshot
 # bindsym Print exec xfce4-screenshooter
-bindsym Print exec flameshot gui -p ~/Images/screenshots
+# bindsym Print exec flameshot gui -p ~/Images/screenshots
 
 # Ecran externe
 workspace 1 output LVDS1

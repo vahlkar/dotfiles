@@ -115,6 +115,10 @@
 # "/usr/bin/systemctl hybrid-sleep"
 #    Control + Pause
 
+# Print Screen
+"/usr/bin/flameshot gui -p $HOME/Pictures/Autres/Screenshots"
+   c:107
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
