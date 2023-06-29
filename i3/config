@@ -203,9 +203,20 @@ bindsym Shift+XF86Calculator exec ~/bin/touchpad_toggle.sh
 # bindsym Print exec flameshot gui -p ~/Images/screenshots
 
 # Ecran externe
-workspace 1 output LVDS1
-workspace 8 output VGA1
-workspace 8 output HDMI-1-0
+workspace 1 output eDP-1
+workspace 5 output HDMI-1
+workspace 5 output DP-1
+workspace 5 output DP-2
+workspace 5 output DP-3
+
+# assign [class="Terminator"] 1
+assign [class="Chromium"] 2
+assign [class="Thunar"] 3
+assign [class="zoom"] 3
+assign [class="discord"] 3
+assign [class="KeePassXC"] 4
+assign [class="PixInsight"] 5
+assign [class="xfreerdp"] 6
 
 # Applications lancées au démarrage de i3
 #exec --no-startup-id [app]
