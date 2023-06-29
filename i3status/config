@@ -15,6 +15,7 @@ order += "disk /"
 order += "wireless wlp114s0"
 order += "wireless net0"
 order += "ethernet net1"
+order += "ethernet net2"
 order += "ethernet tun0"
 order += "ethernet wg0"
 order += "ethernet nordlynx"
@@ -35,7 +36,12 @@ wireless net0 {
 }
 
 ethernet net1 {
-        format_up = "E: %ip"
+        format_up = "Android: %ip"
+        format_down = ""
+}
+
+ethernet net2 {
+        format_up = "iOS: %ip"
         format_down = ""
 }
 
