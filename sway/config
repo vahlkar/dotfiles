@@ -1,0 +1,275 @@
+# Config for sway
+# Read `man 5 sway` for a complete reference.
+
+include /etc/sway/config.d/*
+
+### Variables
+
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Your preferred terminal emulator
+set $TERMINAL terminator
+set $term terminator
+#set $term i3-sensible-terminal
+
+# Lock command
+set $lock swaylock -f -k -c 000000 -i ~/.wallpaper-lock -s fill
+
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+### Output configuration
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1 10
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, if you need a lot of unicode glyphs or
+# right-to-left text rendering, you should instead use pango for rendering and
+# chose a FreeType font, such as:
+# font pango:DejaVu Sans Mono 10
+
+# Wallpaper
+output * bg ~/.wallpaper fill
+
+# Resolution
+#output eDP-1 resolution 1920x1200 position 1920,0
+
+### Idle configuration
+
+exec swayidle -w \
+    timeout 600 $lock \
+    timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    before-sleep $lock
+
+### Input configuration
+
+# Keyboard layout
+input * {
+    xkb_layout "ch(fr)"
+}
+
+# Touchpad
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+
+### Key bindings
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+# bindsym $mod+Shift+q kill
+bindcode $mod+Shift+24 kill
+
+# Start your launcher
+bindsym $mod+d exec $menu
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+#### Moving around
+
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# alternatively, using the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+# alternatively, using the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+#### Workspaces
+
+# Switch to workspace
+bindcode $mod+10 workspace number 1
+bindcode $mod+11 workspace number 2
+bindcode $mod+12 workspace number 3
+bindcode $mod+13 workspace number 4
+bindcode $mod+14 workspace number 5
+bindcode $mod+15 workspace number 6
+bindcode $mod+16 workspace number 7
+bindcode $mod+17 workspace number 8
+bindcode $mod+18 workspace number 9
+bindcode $mod+19 workspace number 10
+
+# Move focused container to workspace
+bindcode $mod+Shift+10 move container to workspace number 1
+bindcode $mod+Shift+11 move container to workspace number 2
+bindcode $mod+Shift+12 move container to workspace number 3
+bindcode $mod+Shift+13 move container to workspace number 4
+bindcode $mod+Shift+14 move container to workspace number 5
+bindcode $mod+Shift+15 move container to workspace number 6
+bindcode $mod+Shift+16 move container to workspace number 7
+bindcode $mod+Shift+17 move container to workspace number 8
+bindcode $mod+Shift+18 move container to workspace number 9
+bindcode $mod+Shift+19 move container to workspace number 10
+
+#### Layout
+
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+# bindsym $mod+a focus parent
+bindcode $mod+38 focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+#### Scratchpad
+
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+
+#### Resizing containers
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#### Status bar
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+        status_command i3status
+        font pango:Source Code Pro 10
+}
+
+### User configuration
+
+# Lock screen
+bindsym $mod+Escape exec $lock
+# Fast sway exit
+bindsym $mod+Shift+Escape exit
+
+# Reboot
+bindsym Control+Mod1+Delete exec swaynag -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot the computer?' -B 'Yes, reboot' 'reboot'
+
+# Focus on flashing window
+# bindsym $mod+q [urgent=latest] focus
+bindcode $mod+24 [urgent=latest] focus
+
+# Apps shortcuts
+bindsym $mod+F1 exec chromium
+bindsym $mod+F2 exec thunar
+bindsym $mod+F3 exec thunderbird
+bindsym $mod+F4 exec keepassxc
+bindsym $mod+F5 exec PixInsight
+bindsym $mod+F6 exec /home/volodia/bin/ledger-live
+bindsym $mod+F8 exec pavucontrol
+
+# Redundant shortcuts
+bindsym $mod+XF86Mail exec thunderbird
+bindsym Control+XF86Mail exec discord
+bindsym $mod+XF86MyComputer exec thunar
+bindsym $mod+XF86HomePage exec chromium
+bindsym $mod+XF86Calculator exec gnome-calculator
+
+# Screenshot
+# bindsym Print exec xfce4-screenshooter
+# bindsym Print exec flameshot gui -p ~/Images/screenshots
+
+# Monitors
+workspace 1 output eDP-1
+workspace 5 output HDMI-1
+workspace 5 output DP-1
+workspace 5 output DP-2
+workspace 5 output DP-3
+
+# Assign apps to workspaces
+# assign [class="Terminator"] 1
+assign [class="Chromium"] number 2
+assign [class="zoom"] number 3
+assign [class="discord"] number 3
+assign [class="KeePassXC"] number 4
+assign [class="PixInsight"] number 5
+assign [class="xfreerdp"] number 6
+for_window [class="zoom" title="^zoom$"] floating enable
+for_window [class="gnome-calculator"] floating enable
+
+# Special keys shortcuts
+exec --no-startup-id xbindkeys
+
+# AppArmor notify
+exec --no-startup-id aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
