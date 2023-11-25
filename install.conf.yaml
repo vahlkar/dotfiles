@@ -26,6 +26,7 @@
     ~/.xbindkeysrc: X/xbindkeysrc
     ~/.config/i3: i3
     ~/.config/i3status: i3status
+    ~/.config/sway: sway
     ~/.config/terminator: terminator
     ~/.config/dhcpd: dhcpd
     ~/.config/mpd/mpd.conf: mpd/mpd.conf

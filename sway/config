@@ -20,12 +20,13 @@ set $term terminator
 #set $term i3-sensible-terminal
 
 # Lock command
-set $lock swaylock -f -k -c 000000 -i ~/.wallpaper-lock -s fill
+set $lock swaylock -f -c 000000 -i ~/.wallpaper-lock -s fill
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu j4-dmenu-desktop --dmenu='bemenu -i' | xargs swaymsg exec --
 
 ### Output configuration
 
@@ -41,14 +42,23 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1 10
 # Wallpaper
 output * bg ~/.wallpaper fill
 
+# Hide cursor (delay in ms)
+seat * hide_cursor 5000
+#seat * hide_cursor when-typing enable
+
 # Resolution
 #output eDP-1 resolution 1920x1200 position 1920,0
+
+# Tag X windows
+for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 ### Idle configuration
 
 exec swayidle -w \
     timeout 600 $lock \
-    timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    timeout 900 'swaymsg "output * power off"' \
+    timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' \
+    resume 'swaymsg "output * power on"' \
     before-sleep $lock
 
 ### Input configuration
@@ -238,6 +248,7 @@ bindsym $mod+F4 exec keepassxc
 bindsym $mod+F5 exec PixInsight
 bindsym $mod+F6 exec /home/volodia/bin/ledger-live
 bindsym $mod+F8 exec pavucontrol
+bindsym Shift+F12 exec "$lock && systemctl suspend"
 
 # Redundant shortcuts
 bindsym $mod+XF86Mail exec thunderbird
@@ -246,9 +257,21 @@ bindsym $mod+XF86MyComputer exec thunar
 bindsym $mod+XF86HomePage exec chromium
 bindsym $mod+XF86Calculator exec gnome-calculator
 
+# Media shortcuts
+bindsym XF86AudioRaiseVolume exec ponymix --max-volume 150 increase 5
+bindsym XF86AudioLowerVolume exec ponymix --max-volume 150 decrease 5
+bindsym XF86AudioMute exec ponymix toggle
+bindsym XF86AudioMicMute exec ponymix --source toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # Screenshot
 # bindsym Print exec xfce4-screenshooter
 # bindsym Print exec flameshot gui -p ~/Images/screenshots
+bindsym Print exec grim -g "$(slurp)"
 
 # Monitors
 workspace 1 output eDP-1
@@ -259,17 +282,14 @@ workspace 5 output DP-3
 
 # Assign apps to workspaces
 # assign [class="Terminator"] 1
-assign [class="Chromium"] number 2
-assign [class="zoom"] number 3
-assign [class="discord"] number 3
-assign [class="KeePassXC"] number 4
+assign [app_id="chromium"] number 2
+assign [app_id="zoom"] number 3
+assign [app_id="discord"] number 3
+assign [app_id="org.keepassxc.KeePassXC"] number 4
 assign [class="PixInsight"] number 5
 assign [class="xfreerdp"] number 6
 for_window [class="zoom" title="^zoom$"] floating enable
-for_window [class="gnome-calculator"] floating enable
-
-# Special keys shortcuts
-exec --no-startup-id xbindkeys
+for_window [app_id="org.gnome.Calculator"] floating enable
 
 # AppArmor notify
 exec --no-startup-id aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
