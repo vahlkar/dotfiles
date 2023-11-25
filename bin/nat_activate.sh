@@ -17,6 +17,7 @@ if [ -z "$IF_ETH" ]; then
     echo "Shared interface not detected!" >&2
     exit 1
 fi
+IF_ETH="enp0s13f0u3u3"
 echo "Ethernet interface on $IF_ETH"
 
 IF_VPN="$(ip l | grep -B1 "link/none" | grep "^[0-9]:" | awk '{ print $2 }' | sed -e 's/://')"
