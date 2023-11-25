@@ -5,7 +5,6 @@
   [[default]]
     background_darkness = 0.85
     background_type = transparent
-    cursor_color = "#aaaaaa"
     font = Monospace 11
 [layouts]
   [[default]]
