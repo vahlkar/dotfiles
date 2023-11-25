@@ -116,7 +116,7 @@
 #    Control + Pause
 
 # Print Screen
-"/usr/bin/flameshot gui -p $HOME/Pictures/Autres/Screenshots"
+"/usr/bin/flameshot gui -c -p $HOME/Pictures/Autres/Screenshots"
    c:107
 
 ##################################
