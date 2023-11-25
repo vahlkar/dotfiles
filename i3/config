@@ -185,6 +185,7 @@ bindsym $mod+F1 exec chromium
 bindsym $mod+F2 exec thunar
 bindsym $mod+F3 exec thunderbird
 bindsym $mod+F4 exec keepassxc
+bindsym $mod+F5 exec PixInsight
 bindsym $mod+F8 exec pavucontrol
 
 # Redundant shortcuts
@@ -211,12 +212,13 @@ workspace 5 output DP-3
 
 # assign [class="Terminator"] 1
 assign [class="Chromium"] 2
-assign [class="Thunar"] 3
 assign [class="zoom"] 3
 assign [class="discord"] 3
 assign [class="KeePassXC"] 4
 assign [class="PixInsight"] 5
 assign [class="xfreerdp"] 6
+for_window [class="zoom" title="^zoom$"] floating enable
+for_window [class="gnome-calculator"] floating enable
 
 # Applications lancées au démarrage de i3
 #exec --no-startup-id [app]
