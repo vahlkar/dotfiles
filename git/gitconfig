@@ -1,6 +1,6 @@
 [user]
 	name = Volodia Laniel
-	email = laniel.volodia@gmail.com
+	email = volodia@laniel.eu
 [color]
 	ui = true
 [push]
@@ -12,3 +12,5 @@
 	st = status
 	a = add
 	lg = log --oneline
+[init]
+	defaultBranch = main

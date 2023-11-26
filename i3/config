@@ -170,6 +170,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        font pango:Source Code Pro 10
 }
 
 # Configuration utilisateur
@@ -185,7 +186,16 @@ bindsym $mod+F2 exec thunar
 
 # Screenshot
 bindsym Print exec xfce4-screenshooter
-# bindsym Print exec flameshot gui -p ~/Images/screenshots
 
-# Applications lancées au démarrage de i3
-#exec --no-startup-id [app]
+assign [class="Chromium"] 2
+assign [class="xfreerdp"] 6
+for_window [class="gnome-calculator"] floating enable
+
+# Wallpaper
+exec --no-startup-id feh --bg-fill ~/.wallpaper
+
+# Picom - Composite manager
+exec --no-startup-id picom &
+
+# unclutter to hide iddle cursor
+exec --no-startup-id unclutter --fork

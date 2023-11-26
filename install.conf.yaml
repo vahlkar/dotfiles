@@ -22,7 +22,13 @@
     ~/.xprofile: X/xprofile
     ~/.config/i3: i3
     ~/.config/i3status: i3status
+    ~/.config/sway: sway
     ~/.config/terminator: terminator
     ~/.config/dhcpd: dhcpd
     ~/.vim/bundle/Vundle.vim: Vundle.vim
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.config/mpd/mpd.conf: mpd/mpd.conf
+    ~/.config/picom/picom.conf: X/picom.conf
+    ~/.config/chromium-flags.conf: chromium-flags.conf
+    ~/.config/electron13-flags.conf: electron13-flags.conf
+    ~/.config/electron25-flags.conf: electron25-flags.conf
