@@ -34,5 +34,6 @@
     ~/.vim/bundle/Vundle.vim: Vundle.vim
     ~/.tmux.conf: tmux/tmux.conf
     ~/.config/chromium-flags.conf: chromium-flags.conf
+    ~/.config/brave-flags.conf: brave-flags.conf
     ~/.config/electron13-flags.conf: electron13-flags.conf
     ~/.config/electron25-flags.conf: electron25-flags.conf

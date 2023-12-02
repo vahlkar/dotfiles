@@ -241,7 +241,8 @@ bindsym Control+Mod1+Delete exec swaynag -t warning -m 'You pressed the reboot s
 bindcode $mod+24 [urgent=latest] focus
 
 # Apps shortcuts
-bindsym $mod+F1 exec chromium
+# bindsym $mod+F1 exec chromium
+bindsym $mod+F1 exec brave
 bindsym $mod+F2 exec thunar
 bindsym $mod+F3 exec thunderbird
 bindsym $mod+F4 exec keepassxc
@@ -283,6 +284,7 @@ workspace 5 output DP-3
 # Assign apps to workspaces
 # assign [class="Terminator"] 1
 assign [app_id="chromium"] number 2
+assign [app_id="brave-browser"] number 2
 assign [app_id="zoom"] number 3
 assign [app_id="discord"] number 3
 assign [app_id="org.keepassxc.KeePassXC"] number 4
