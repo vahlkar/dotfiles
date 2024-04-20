@@ -16,6 +16,7 @@ order += "wireless wlp114s0"
 order += "wireless net0"
 order += "ethernet net1"
 order += "ethernet net2"
+order += "ethernet net3"
 order += "ethernet tun0"
 order += "ethernet wg0"
 order += "ethernet nordlynx"
@@ -42,6 +43,11 @@ ethernet net1 {
 
 ethernet net2 {
         format_up = "iOS: %ip"
+        format_down = ""
+}
+
+ethernet net3 {
+        format_up = "USB: %ip"
         format_down = ""
 }
 

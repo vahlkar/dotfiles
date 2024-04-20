@@ -27,7 +27,9 @@ set $lock swaylock -f -c 000000 -i ~/.wallpaper-lock -s fill
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu j4-dmenu-desktop --dmenu='bemenu -i' | xargs swaymsg exec --
+# set $menu j4-dmenu-desktop --dmenu='bemenu -i' | xargs swaymsg exec --
+set $menu j4-dmenu-desktop --display-binary --dmenu='bemenu -i' | xargs swaymsg exec --
+# set $menu dmenu_path | bemenu -i | xargs swaymsg exec --
 
 ### Output configuration
 
@@ -249,7 +251,8 @@ bindsym $mod+F3 exec thunderbird
 bindsym $mod+F4 exec keepassxc
 bindsym $mod+F5 exec PixInsight
 bindsym $mod+F6 exec /home/volodia/bin/ledger-live
-bindsym $mod+F8 exec pavucontrol
+bindsym $mod+F8 exec swaymsg "output eDP-1 toggle"
+bindsym $mod+F9 exec pavucontrol
 bindsym Shift+F12 exec "$lock && systemctl suspend"
 
 # Redundant shortcuts
