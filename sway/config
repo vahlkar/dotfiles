@@ -17,6 +17,7 @@ set $right l
 # Your preferred terminal emulator
 set $TERMINAL terminator
 set $term terminator
+set $GRIM_DEFAULT_DIR "$HOME/Pictures/Screenshots/"
 #set $term i3-sensible-terminal
 
 # Lock command
@@ -272,7 +273,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # Screenshot
 # bindsym Print exec xfce4-screenshooter
 # bindsym Print exec flameshot gui -p ~/Images/screenshots
-bindsym Print exec grim -g "$(slurp)"
+bindsym Print exec env GRIM_DEFAULT_DIR=$GRIM_DEFAULT_DIR grim -c -g "$(slurp)"
+bindsym Shift+Print exec env GRIM_DEFAULT_DIR=$GRIM_DEFAULT_DIR grim -c
 
 # Monitors
 workspace 1 output eDP-1
