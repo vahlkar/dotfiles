@@ -1,0 +1,8 @@
+profile laptop {
+    output eDP-1 enable
+}
+
+profile docked {
+    output eDP-1 disable
+    output * enable
+}

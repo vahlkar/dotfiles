@@ -306,3 +306,6 @@ exec mako
 
 # AppArmor notify
 exec aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
+
+# Activate systemd services (used for kanshi)
+exec_always systemctl --user start sway-session.target
