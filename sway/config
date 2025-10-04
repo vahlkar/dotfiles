@@ -253,7 +253,7 @@ bindsym $mod+F5 exec PixInsight
 bindsym $mod+F6 exec /home/volodia/bin/ledger-live
 bindsym $mod+F8 exec swaymsg "output eDP-1 toggle"
 bindsym $mod+F9 exec pavucontrol
-bindsym Shift+F12 exec "$lock && systemctl suspend"
+bindsym Control+Shift+F12 exec "$lock && systemctl suspend"
 
 # Redundant shortcuts
 bindsym $mod+XF86Mail exec thunderbird
