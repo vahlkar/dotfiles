@@ -13,11 +13,10 @@ general {
 
 order += "disk /"
 order += "wireless wlo1"
-order += "wireless wlp0s29u1u1u2"
-order += "ethernet enp3s0"
+order += "ethernet eth0"
+order += "ethernet net3"
 order += "ethernet tun0"
 order += "ethernet wg0"
-order += "ethernet nordlynx"
 order += "volume master"
 order += "battery 0"
 order += "load"
@@ -29,13 +28,13 @@ wireless wlo1 {
         format_down = "W: down"
 }
 
-wireless wlp0s29u1u1u2 {
-        format_up = "W: (%quality at %essid) %ip"
+ethernet eth0 {
+        format_up = "ETH: %ip"
         format_down = ""
 }
 
-ethernet enp3s0 {
-        format_up = "E: %ip"
+ethernet net3 {
+        format_up = "USB: %ip"
         format_down = ""
 }
 
