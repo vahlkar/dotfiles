@@ -286,6 +286,9 @@ workspace 5 output DP-1
 workspace 5 output DP-2
 workspace 5 output DP-3
 
+bindswitch --reload --locked lid:on output eDP-1 disable
+bindswitch --reload --locked lid:off output eDP-1 enable
+
 # Assign apps to workspaces
 # assign [class="Terminator"] 1
 assign [app_id="chromium"] number 2
