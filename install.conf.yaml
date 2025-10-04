@@ -33,5 +33,4 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.config/chromium-flags.conf: wayland/chromium-flags.conf
     ~/.config/brave-flags.conf: wayland/brave-flags.conf
-    ~/.config/electron13-flags.conf: wayland/electron13-flags.conf
-    ~/.config/electron25-flags.conf: wayland/electron25-flags.conf
+    ~/.config/electron-flags.conf: wayland/electron-flags.conf
