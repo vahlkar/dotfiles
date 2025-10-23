@@ -14,11 +14,11 @@ Plugin 'VundleVim/Vundle.vim'              " Manage plugins
 
 Plugin 'tpope/vim-sensible'             " Add multiple features
 Plugin 'scrooloose/syntastic'           " Compile and print errors on :w
-Plugin 'javacomplete'                   " Complete Java
-Plugin 'tell-k/vim-autopep8'            " Clean python
+"Plugin 'javacomplete'                   " Complete Java
+"Plugin 'tell-k/vim-autopep8'            " Clean python
 Plugin 'tpope/vim-commentary'           " Auto (de)comment
-Plugin 'tpope/vim-endwise'              " Auto end
-Plugin 'matze/vim-move'                 " Move blocs through code and indentation
+"Plugin 'tpope/vim-endwise'              " Auto end
+"Plugin 'matze/vim-move'                 " Move blocs through code and indentation
 Plugin 'bling/vim-airline'              " Explicit status bar
 Plugin 'airblade/vim-gitgutter'         " Print git diff into vim
 Plugin 'Yggdroot/indentLine'            " Explicit indentation
