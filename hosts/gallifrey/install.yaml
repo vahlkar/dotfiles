@@ -1,5 +1,10 @@
 - create:
-    - ~/bin-private
+    ~/bin-private:
+      mode: 0755
+
+- shell:
+    - command: 'chmod 755 "$HOME/bin-private"'
+      description: Enforce ~/bin-private permissions
 
 - link:
     ~/.xbindkeysrc: hosts/gallifrey/xbindkeysrc
