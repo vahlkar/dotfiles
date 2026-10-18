@@ -21,6 +21,5 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# GPG Agent
-command -v gpg-connect-agent > /dev/null && gpg-connect-agent /bye
-export SSH_AUTH_SOCK="/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"
+# Host-specific configuration
+[ -f "$HOME/.profile-host" ] && . "$HOME/.profile-host"

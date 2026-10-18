@@ -14,7 +14,6 @@
     ~/.config/fish/functions: fish/functions
     ~/.config/systemd: systemd
     ~/.gnupg/gpg.conf: gnupg/gpg.conf
-    ~/.gnupg/gpg-agent.conf: gnupg/gpg-agent.conf
     ~/.gitconfig: git/gitconfig
     ~/.vimrc: vim/vimrc
     ~/.profile: X/profile

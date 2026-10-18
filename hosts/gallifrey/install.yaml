@@ -14,8 +14,10 @@
     ~/.config/i3status/config: hosts/gallifrey/i3status.conf
     ~/.config/fish/host.fish: hosts/gallifrey/fish-host.fish
     ~/.config/mpd/mpd.conf: hosts/gallifrey/mpd.conf
+    ~/.gnupg/gpg-agent.conf: hosts/gallifrey/gpg-agent.conf
     ~/.gnupg-alt-keyring/gpg.conf: gnupg/gpg.conf
-    ~/.gnupg-alt-keyring/gpg-agent.conf: gnupg/gpg-agent.conf
+    ~/.gnupg-alt-keyring/gpg-agent.conf: hosts/gallifrey/gpg-agent.conf
+    ~/.profile-host: hosts/gallifrey/profile-host.sh
     ~/bin-private/borg-update.sh: hosts/gallifrey/bin/borg-update.sh
     ~/bin-private/cups_upgrade.sh: hosts/gallifrey/bin/cups_upgrade.sh
     ~/bin-private/feh_wallpaper.sh: hosts/gallifrey/bin/feh_wallpaper.sh

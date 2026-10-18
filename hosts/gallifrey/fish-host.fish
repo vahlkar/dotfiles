@@ -1,5 +1,13 @@
 # Host-specific fish configuration (gallifrey)
 
+# GPG agent
+if status --is-login
+    if command -q gpg-connect-agent
+        gpg-connect-agent /bye
+    end
+    set -x SSH_AUTH_SOCK "/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"
+end
+
 set -x BORG_REPO "/run/media/volodia/61bf0c76-0358-4114-aa8f-3af3f4c419d2/home/volodia/backup"
 set -x VPN $HOME/work/tools/nordvpn/ovpn_udp
 fish_add_path "$HOME/Android/Sdk/emulator"

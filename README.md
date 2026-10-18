@@ -26,6 +26,10 @@ Host overlays used by shared configs:
 - `hosts/<profile>/i3status.conf` — linked as `~/.config/i3status/config`
 - `hosts/gallifrey/kanshi.conf` — linked as `~/.config/kanshi/config`
   (gallifrey only)
+- `hosts/gallifrey/gpg-agent.conf` — linked as `~/.gnupg/gpg-agent.conf`
+  (gallifrey only; the gpg agent is also only started on gallifrey)
+- `hosts/gallifrey/profile-host.sh` — sourced by the shared `X/profile`
+  through `~/.profile-host` (bash login shells)
 - `hosts/gallifrey/fish-host.fish` — sourced by the shared `fish/config.fish`
   through `~/.config/fish/host.fish`
 
