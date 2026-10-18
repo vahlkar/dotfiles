@@ -178,15 +178,19 @@ bindsym $mod+Escape exec i3lock -c 000000 -fi ~/.wallpaper-lock
 bindsym $mod+Shift+Escape exit
 
 bindsym Control+Mod1+Delete exec "i3-nagbar -t warning -m 'You pressed the reboot shortcut. Do you really want to reboot the computer?' -b 'Yes, reboot' 'reboot'"
+
+# Suspend
+bindsym Control+Shift+F12 exec "i3lock -c 000000 -fi ~/.wallpaper-lock && systemctl suspend"
 # bindsym $mod+a [urgent=latest] focus
 bindcode $mod+24 [urgent=latest] focus
 
-bindsym $mod+F1 exec chromium
+bindsym $mod+F1 exec brave
 bindsym $mod+F2 exec thunar
 
 # Screenshot bindings are host-specific (see hosts/<profile>/i3-host.conf)
 
 assign [class="Chromium"] 2
+assign [class="brave-browser"] 2
 assign [class="xfreerdp"] 6
 for_window [class="gnome-calculator"] floating enable
 
