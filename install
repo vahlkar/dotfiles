@@ -23,6 +23,6 @@ if [ ! -f "${PROFILE_CONFIG}" ]; then
     exit 1
 fi
 
-git submodule update --init --recursive "${DOTBOT_DIR}"
+git submodule update --init --recursive
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${PROFILE_CONFIG}" "${@}"

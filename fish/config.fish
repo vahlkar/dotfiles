@@ -11,14 +11,18 @@ fish_add_path "$GEM_HOME/bin"
 
 if status --is-login
     # GPG Agent
-    gpg-connect-agent /bye
+    if command -q gpg-connect-agent
+        gpg-connect-agent /bye
+    end
     #export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
     set -x SSH_AUTH_SOCK "/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"
     set -x _JAVA_AWT_WM_NONREPARENTING 1
 end
 
 # Load pyenv
-pyenv init - fish | source
+if command -q pyenv
+    pyenv init - fish | source
+end
 
 # Host-specific configuration
 if test -e ~/.config/fish/host.fish
