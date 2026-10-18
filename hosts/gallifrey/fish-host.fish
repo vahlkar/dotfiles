@@ -5,6 +5,9 @@ set -x VPN $HOME/work/tools/nordvpn/ovpn_udp
 fish_add_path "$HOME/Android/Sdk/emulator"
 fish_add_path "$HOME/.gem/ruby/3.0.0/bin"
 
+# Local-only scripts, intentionally not linked or tracked in this repo
+fish_add_path "$HOME/bin-private"
+
 # GPG alternate keyring
 set GNUPG_ALT_KEYRING "~/.gnupg-alt-keyring"
 function altkeyring

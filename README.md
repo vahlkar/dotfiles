@@ -31,6 +31,9 @@ Host overlays used by shared configs:
 
 Host-specific scripts live in `hosts/<profile>/bin/` and are linked
 individually into `~/bin` (which is itself a symlink to the shared `bin/`).
+On gallifrey, `~/bin-private` is also created and added to the PATH for
+scripts that stay local to the machine and are deliberately not part of
+this repository.
 
 ## Files not deployed by dotbot
 
