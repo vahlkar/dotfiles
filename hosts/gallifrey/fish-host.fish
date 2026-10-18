@@ -3,9 +3,25 @@
 set -x BORG_REPO "/run/media/volodia/61bf0c76-0358-4114-aa8f-3af3f4c419d2/home/volodia/backup"
 set -x VPN $HOME/work/tools/nordvpn/ovpn_udp
 fish_add_path "$HOME/Android/Sdk/emulator"
+fish_add_path "$HOME/.gem/ruby/3.0.0/bin"
 
 # GPG alternate keyring
 set GNUPG_ALT_KEYRING "~/.gnupg-alt-keyring"
 function altkeyring
   /usr/bin/gpg2 --homedir "$GNUPG_ALT_KEYRING" $argv
+end
+
+# OpenVPN launcher for the servers in $VPN
+function ovpn
+  if [ "$argv" ]
+    set TARGET $argv
+  else
+    set TARGET ch
+  end
+  set SERVER (ls -alh "$VPN" | awk '{ print $9 }' | grep ovpn | grep "$TARGET" | sort -R | head -1)
+  if [ "$SERVER" ]
+    sudo openvpn "$VPN/$SERVER"
+  else
+    echo "No server found for filter $TARGET"
+  end
 end

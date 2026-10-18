@@ -1,6 +1,8 @@
 - link:
     ~/.xbindkeysrc: hosts/gallifrey/xbindkeysrc
     ~/.config/i3/host.conf: hosts/gallifrey/i3-host.conf
+    ~/.config/sway/host.conf: hosts/gallifrey/sway-host.conf
+    ~/.config/kanshi/config: hosts/gallifrey/kanshi.conf
     ~/.config/i3status/config: hosts/gallifrey/i3status.conf
     ~/.config/fish/host.fish: hosts/gallifrey/fish-host.fish
     ~/.config/mpd/mpd.conf: hosts/gallifrey/mpd.conf

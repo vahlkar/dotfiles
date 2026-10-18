@@ -1,5 +1,6 @@
 - link:
     ~/.config/i3/host.conf: hosts/generic/i3-host.conf
+    ~/.config/sway/host.conf: hosts/generic/sway-host.conf
     ~/.config/i3status/config: hosts/generic/i3status.conf
     ~/.gnupg/dirmngr.conf:
         path: gnupg/dirmngr.conf

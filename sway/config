@@ -15,7 +15,6 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $TERMINAL terminator
 set $term terminator
 set $GRIM_DEFAULT_DIR "$HOME/Pictures/Screenshots/"
 #set $term i3-sensible-terminal
@@ -48,9 +47,6 @@ output * bg ~/.wallpaper fill
 # Hide cursor (delay in ms)
 seat * hide_cursor 5000
 #seat * hide_cursor when-typing enable
-
-# Resolution
-#output eDP-1 resolution 1920x1200 position 1920,0
 
 # Tag X windows
 for_window [shell="xwayland"] title_format "[XWayland] %title"
@@ -250,8 +246,6 @@ bindsym $mod+F2 exec thunar
 bindsym $mod+F3 exec thunderbird
 bindsym $mod+F4 exec keepassxc
 bindsym $mod+F5 exec PixInsight
-bindsym $mod+F6 exec /home/volodia/bin/ledger-live
-bindsym $mod+F8 exec swaymsg "output eDP-1 toggle"
 bindsym $mod+F9 exec pavucontrol
 bindsym Control+Shift+F12 exec "$lock && systemctl suspend"
 
@@ -259,7 +253,7 @@ bindsym Control+Shift+F12 exec "$lock && systemctl suspend"
 bindsym $mod+XF86Mail exec thunderbird
 bindsym Control+XF86Mail exec discord
 bindsym $mod+XF86MyComputer exec thunar
-bindsym $mod+XF86HomePage exec chromium
+bindsym $mod+XF86HomePage exec brave
 bindsym $mod+XF86Calculator exec gnome-calculator
 
 # Media shortcuts
@@ -279,15 +273,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym Print exec env GRIM_DEFAULT_DIR=$GRIM_DEFAULT_DIR grim -c -g "$(slurp)"
 bindsym Shift+Print exec env GRIM_DEFAULT_DIR=$GRIM_DEFAULT_DIR grim -c
 
-# Monitors
-workspace 1 output eDP-1
-workspace 5 output HDMI-1
-workspace 5 output DP-1
-workspace 5 output DP-2
-workspace 5 output DP-3
-
-bindswitch --reload --locked lid:on output eDP-1 disable
-bindswitch --reload --locked lid:off output eDP-1 enable
+# Monitors are configured per host (see hosts/<profile>/sway-host.conf)
 
 # Assign apps to workspaces
 # assign [class="Terminator"] 1
@@ -309,3 +295,6 @@ exec aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
 
 # Activate systemd services (used for kanshi)
 exec_always systemctl --user start sway-session.target
+
+# Host-specific configuration
+include ~/.config/sway/host.conf

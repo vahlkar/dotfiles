@@ -8,7 +8,6 @@ set -x PYENV_ROOT $HOME/.pyenv
 fish_add_path "$HOME/bin"
 fish_add_path "$PYENV_ROOT/bin"
 fish_add_path "$GEM_HOME/bin"
-fish_add_path "$HOME/.gem/ruby/3.0.0/bin"
 
 if status --is-login
     # GPG Agent

@@ -3,8 +3,6 @@
 	email = volodia@laniel.eu
 [color]
 	ui = true
-[push]
-	default = simple
 [alias]
 	co = checkout
 	ci = commit
