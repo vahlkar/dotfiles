@@ -21,7 +21,7 @@
     ~/.xinitrc: X/xinitrc
     ~/.xprofile: X/xprofile
     ~/.config/i3/config: i3/config
-    ~/.config/sway: sway
+    ~/.config/sway/config: sway/config
     ~/.config/terminator: terminator
     ~/.config/dhcpd: dhcpd
     ~/.config/picom/picom.conf: X/picom.conf
