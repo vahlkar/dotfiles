@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Activate radeon graphics
-# xrandr --setprovideroffloadsink 1 0
-# xrandr --setprovideroutputsource 1 0
-
 # Deactivate system beep
 xset -b
 xset s off -dpms
-
-# Custom keyboard settings
-#xmodmap ~/.Xmodmap

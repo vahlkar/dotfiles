@@ -1,8 +1,6 @@
 set -x GPG_TTY (tty)
 set -x EDITOR vim
 set -x VISUAL vim
-set -x BORG_REPO "/run/media/volodia/61bf0c76-0358-4114-aa8f-3af3f4c419d2/home/volodia/backup"
-set -x VPN $HOME/work/tools/nordvpn/ovpn_udp
 set -x GEM_HOME "$HOME/.gems"
 set -x GRIM_DEFAULT_DIR "$HOME/Pictures/Screenshots/"
 set -x PYENV_ROOT $HOME/.pyenv
@@ -11,7 +9,6 @@ fish_add_path "$HOME/bin"
 fish_add_path "$PYENV_ROOT/bin"
 fish_add_path "$GEM_HOME/bin"
 fish_add_path "$HOME/.gem/ruby/3.0.0/bin"
-fish_add_path "$HOME/Android/Sdk/emulator"
 
 if status --is-login
     # GPG Agent
@@ -23,3 +20,8 @@ end
 
 # Load pyenv
 pyenv init - fish | source
+
+# Host-specific configuration
+if test -e ~/.config/fish/host.fish
+    source ~/.config/fish/host.fish
+end

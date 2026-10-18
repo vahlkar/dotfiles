@@ -3,12 +3,26 @@
 set -e
 
 CONFIG="install.conf.yaml"
+HOSTS_DIR="hosts"
 DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+PROFILE="${1:-$(hostname)}"
+if [ "$#" -gt 0 ]; then
+    shift
+fi
+PROFILE_CONFIG="${HOSTS_DIR}/${PROFILE}/install.yaml"
+
 cd "${BASEDIR}"
+
+if [ ! -f "${PROFILE_CONFIG}" ]; then
+    echo "Unknown host profile: ${PROFILE}" >&2
+    echo "Available profiles: $(ls "${HOSTS_DIR}" | tr '\n' ' ')" >&2
+    exit 1
+fi
+
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${PROFILE_CONFIG}" "${@}"
