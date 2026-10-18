@@ -1,0 +1,1 @@
+/home/volodia/work/tools/scanyourpdf/scanned_pdf_2.sh
