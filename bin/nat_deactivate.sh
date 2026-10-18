@@ -1,5 +1,5 @@
 #!/bin/bash
-IF_ETH=enp3s0
+IF_ETH=net3
 
 ### Root check
 if [ "$EUID" -ne 0 ]; then
@@ -25,7 +25,7 @@ fi
 echo "Host default interface on $IF_HOST"
 IF_OUT="$IF_HOST"
 
-IF_ETH="$(ip l | grep -B1 "link/ether" | grep "^[0-9]:" | grep -v "$IF_HOST" | awk '{ print $2 }' | sed -e 's/://')"
+# IF_ETH="$(ip l | grep -B1 "link/ether" | grep "^[0-9]:" | grep -v "$IF_HOST" | awk '{ print $2 }' | sed -e 's/://')"
 if [ -z "$IF_ETH" ]; then
     echo "Shared interface not detected!" >&2
     exit 1
@@ -36,5 +36,5 @@ echo "Unconfigure network interface ${IF_ETH}."
 ip link set "$IF_ETH" down
 ip addr flush "$IF_ETH"
 
-echo "Start netctl-ifplugd@${IF_ETH}.service"
-systemctl start "netctl-ifplugd@${IF_ETH}.service"
+# echo "Start netctl-ifplugd@${IF_ETH}.service"
+# systemctl start "netctl-ifplugd@${IF_ETH}.service"
