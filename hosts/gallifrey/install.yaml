@@ -11,18 +11,18 @@
     ~/.config/mpd/mpd.conf: hosts/gallifrey/mpd.conf
     ~/.gnupg-alt-keyring/gpg.conf: gnupg/gpg.conf
     ~/.gnupg-alt-keyring/gpg-agent.conf: gnupg/gpg-agent.conf
-    ~/bin/borg-update.sh: hosts/gallifrey/bin/borg-update.sh
-    ~/bin/cups_upgrade.sh: hosts/gallifrey/bin/cups_upgrade.sh
-    ~/bin/feh_wallpaper.sh: hosts/gallifrey/bin/feh_wallpaper.sh
-    ~/bin/generate_lock_screen.fish: hosts/gallifrey/bin/generate_lock_screen.fish
-    ~/bin/music_control_key.sh: hosts/gallifrey/bin/music_control_key.sh
-    ~/bin/switch_lock_screen.py: hosts/gallifrey/bin/switch_lock_screen.py
-    ~/bin/touchpad_toggle.sh: hosts/gallifrey/bin/touchpad_toggle.sh
-    ~/bin/netctl_to_qrcode.sh: hosts/gallifrey/bin/netctl_to_qrcode.sh
-    ~/bin/smallpdf.sh: hosts/gallifrey/bin/smallpdf.sh
-    ~/bin/GraXpert:
+    ~/bin-private/borg-update.sh: hosts/gallifrey/bin/borg-update.sh
+    ~/bin-private/cups_upgrade.sh: hosts/gallifrey/bin/cups_upgrade.sh
+    ~/bin-private/feh_wallpaper.sh: hosts/gallifrey/bin/feh_wallpaper.sh
+    ~/bin-private/generate_lock_screen.fish: hosts/gallifrey/bin/generate_lock_screen.fish
+    ~/bin-private/music_control_key.sh: hosts/gallifrey/bin/music_control_key.sh
+    ~/bin-private/switch_lock_screen.py: hosts/gallifrey/bin/switch_lock_screen.py
+    ~/bin-private/touchpad_toggle.sh: hosts/gallifrey/bin/touchpad_toggle.sh
+    ~/bin-private/netctl_to_qrcode.sh: hosts/gallifrey/bin/netctl_to_qrcode.sh
+    ~/bin-private/smallpdf.sh: hosts/gallifrey/bin/smallpdf.sh
+    ~/bin-private/GraXpert:
         path: hosts/gallifrey/bin/GraXpert
         ignore-missing: true
-    ~/bin/siril:
+    ~/bin-private/siril:
         path: hosts/gallifrey/bin/siril
         ignore-missing: true

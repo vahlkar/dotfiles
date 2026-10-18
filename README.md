@@ -30,10 +30,10 @@ Host overlays used by shared configs:
   through `~/.config/fish/host.fish`
 
 Host-specific scripts live in `hosts/<profile>/bin/` and are linked
-individually into `~/bin` (which is itself a symlink to the shared `bin/`).
-On gallifrey, `~/bin-private` is also created and added to the PATH for
-scripts that stay local to the machine and are deliberately not part of
-this repository.
+individually. On gallifrey they go into `~/bin-private`, a real
+directory on PATH that also holds scripts that stay local to the
+machine; neither is written into the shared `bin/` (which is a symlink
+target of `~/bin` and contains only shared scripts).
 
 ## Files not deployed by dotbot
 

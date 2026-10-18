@@ -3,7 +3,7 @@
         relink: true
         create: true
 
-- clean: ['~', '.gnupg', '.config', '.config/fish']
+- clean: ['~', '~/.gnupg', '~/.config', '~/.config/fish']
 
 - link:
     ~/bin: bin
