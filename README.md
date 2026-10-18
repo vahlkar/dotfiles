@@ -32,10 +32,6 @@ Host overlays used by shared configs:
 Host-specific scripts live in `hosts/<profile>/bin/` and are linked
 individually into `~/bin` (which is itself a symlink to the shared `bin/`).
 
-Note: `bin/` directories are gitignored (`.gitignore`); new scripts are
-not tracked by default, add them explicitly with `git add -f` if they
-should be committed.
-
 ## Files not deployed by dotbot
 
 `etc/` stores system configuration that is kept in this repository for

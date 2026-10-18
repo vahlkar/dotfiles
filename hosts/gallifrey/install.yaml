@@ -15,3 +15,11 @@
     ~/bin/music_control_key.sh: hosts/gallifrey/bin/music_control_key.sh
     ~/bin/switch_lock_screen.py: hosts/gallifrey/bin/switch_lock_screen.py
     ~/bin/touchpad_toggle.sh: hosts/gallifrey/bin/touchpad_toggle.sh
+    ~/bin/netctl_to_qrcode.sh: hosts/gallifrey/bin/netctl_to_qrcode.sh
+    ~/bin/smallpdf.sh: hosts/gallifrey/bin/smallpdf.sh
+    ~/bin/GraXpert:
+        path: hosts/gallifrey/bin/GraXpert
+        ignore-missing: true
+    ~/bin/siril:
+        path: hosts/gallifrey/bin/siril
+        ignore-missing: true
