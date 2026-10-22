@@ -1,7 +1,9 @@
 # Host-specific fish configuration (gallifrey)
 
 # GPG agent
-if status --is-login
+# Keyed on interactivity: graphical terminals (e.g. terminator under sway)
+# spawn non-login shells, so status --is-login is almost never true.
+if status --is-interactive
     if command -q gpg-connect-agent
         gpg-connect-agent /bye
     end
